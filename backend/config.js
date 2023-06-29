@@ -1,6 +1,10 @@
-
-
 const pg = require('pg');
+
+
+
+
+
+
 
 
 const config = {
@@ -9,5 +13,10 @@ const config = {
 }
 
 const pool = new pg.Pool(config);
+
+
+
+
+
 
 module.exports = pool;
