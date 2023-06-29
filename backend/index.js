@@ -1,28 +1,28 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = "8080";
 const cors = require('cors');
-const {db} = require('./db');
+const db = require('./DB/db');
 
 //Use Cors to allow cross origin resource sharing
 app.use(cors());
-const syncDb = () => db.sync();
 
 
 
-app.get('/student', (req, res) => {
-    res.send('Hello World!')
-}
-)
+// Mount on API
+app.use("/Routes", require("./Routes"));
 
-app.get('/campus', (req, res) => {
-    res.send('Hello World!')
-}
-)
+// Syncing DB Function
+const syncDB = async () => await db.sync();
 
+// Run server function
+const serverRun = () => {
+  app.listen(PORT, () => {
+    console.log(`Live on port: ${PORT}`);
+  });
+};
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-}
-)
+syncDB(); //Check if a bug happens with the other db in DB/index.js
+serverRun();
 
+module.exports = app;
