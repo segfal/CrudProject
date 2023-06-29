@@ -1,9 +1,11 @@
 import './App.css';
 import {BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
-import Home from './components/Home'
-import Campuses from './components/Campuses'
-import Students from './components/Students'
+import Home from './pages/Home'
+import Campuses from './pages/Campuses'
+import Students from './pages/Students'
+import SingleCampus from './pages/SingleCampus';
+import SingleStudent from './pages/SingleStudent';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route path = "/" element = {<Home/>} />
             <Route path = "campus/*" element= {<Campuses/>} />
             <Route path = "/students/*" element = {<Students/>} />
+            <Route path = "/singleCampus/*" element= {<SingleCampus/>} />
+            <Route path = "/singleStudent/*" element = {<SingleStudent/>} />
            </Routes>
       </div>
     </Router>
