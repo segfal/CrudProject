@@ -1,0 +1,33 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "random",
+            "database": "collegeinfo",
+            "username": "postgres",
+            "password": ""
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "collegeinfo",
+            "username": "postgres",
+            "name": "hello"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "StudentCampus",
+            "database": "collegeinfo",
+            "username": "postgres",
+            "password": ""
+        }
+    ]
+}
