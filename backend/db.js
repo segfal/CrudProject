@@ -1,7 +1,4 @@
-const {Sequelize} = require("sequelize");
-
-
-
+const {Sequelize,DataTypes} = require("sequelize");
 
 
 //database is collegeinfo
@@ -12,12 +9,21 @@ const {Sequelize} = require("sequelize");
     description: string
  )
 
-
+two tables students(
+    first_name: string
+    last_name: string
+    email: string
+    imageUrl: string
+    gpa: float
+ )
 */
 
 
+
+
+
 //access postgress database
-const sequelize = new Sequelize('collegeinfo', 'postgres', 'postgres', {
+const db = new Sequelize('collegeinfo', 'postgres', 'postgres', {
     host: 'localhost',
     dialect: 'postgres',
     pool: {
@@ -32,4 +38,7 @@ const sequelize = new Sequelize('collegeinfo', 'postgres', 'postgres', {
 
 
 
-module.exports = sequelize;
+
+
+
+module.exports = db;

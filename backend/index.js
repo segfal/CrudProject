@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const cors = require('cors');
-const {sequelize} = require('./db');
+const {db} = require('./db');
 
 //Use Cors to allow cross origin resource sharing
 app.use(cors());
-
+const syncDb = () => db.sync();
 
 
 
@@ -25,3 +25,4 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 }
 )
+
