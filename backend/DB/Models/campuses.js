@@ -6,7 +6,7 @@ const db = require("../db");
 
 
 //create campus table
-const Campuses = db.define('campus', {
+const Campus = db.define('campus', {
     name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -28,7 +28,7 @@ const Campuses = db.define('campus', {
 
 const findCampuses = async () => {
     try{
-        const allCampuses = await Campuses.findAll();
+        const allCampuses = await Campus.findAll();
         return allCampuses;
     } catch(error) {
         next(error);
@@ -37,4 +37,4 @@ const findCampuses = async () => {
 
 
 
-module.exports = {Campuses, findCampuses};
+module.exports = {Campus, findCampuses};

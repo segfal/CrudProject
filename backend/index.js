@@ -7,22 +7,18 @@ const db = require('./DB/db');
 //Use Cors to allow cross origin resource sharing
 app.use(cors());
 
+app.use(express.json());
+
 
 
 // Mount on API
-app.use("/Routes", require("./Routes"));
+app.use("/routes", require("./routes"));
 
 // Syncing DB Function
 const syncDB = async () => await db.sync();
 
 // Run server function
 const serverRun = () => {
-
-  //hello world
-  app.get("/", (req, res) => {
-    res.send("Hello World");
-  });
-  
 
 
   app.listen(PORT, () => {

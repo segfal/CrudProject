@@ -1,6 +1,6 @@
 const express = require("express");
 const router = require('express').Router();
-const {Students, findStudents} = require('../DB/Models/students');
+const {Student, findStudents} = require('../DB/Models/students');
 
 
 

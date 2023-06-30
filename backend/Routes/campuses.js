@@ -1,6 +1,6 @@
 const express = require("express");
 const router = require('express').Router();
-const {Campuses, findCampuses} = require('../DB/Models/campuses');
+const {Campus, findCampuses} = require('../DB/Models/campuses');
 
 
 
@@ -14,5 +14,20 @@ router.get('/', async (req, res,next) => {
     }
 
 });
+
+
+///insert new campus with params, the params are the same as the model
+router.post('/addcampus', async (req, res, next) => {
+    try{
+        console.log(req.body);
+        const newCampus = await Campus.create(req.body);
+    
+        res.status(201).json(newCampus);
+    } catch (error){
+        console.log("An error occured", error)
+    }
+}); 
+
+
 
 module.exports = router;

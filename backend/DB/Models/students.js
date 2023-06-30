@@ -5,7 +5,7 @@ const db = require("../db");
 
 
 
-const Students = db.define('students', {
+const Student = db.define('students', {
     first_name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -29,7 +29,7 @@ const Students = db.define('students', {
     }
 });
 
-console.log(Students); 
+
 
 const findStudents = async () => {
     try{
@@ -42,4 +42,4 @@ const findStudents = async () => {
 
 
 
-module.exports = {Students,findStudents};
+module.exports = {Student,findStudents};
