@@ -1,7 +1,7 @@
 
 
 
-const Students = require('./students');
+const {Students,findStudents} = require('./students');
 const Campuses = require('./campuses');
 
 
@@ -10,5 +10,5 @@ Campuses.belongsToMany(Students, {through: 'student_campus'});
 
 
 
-module.exports = {Students, Campuses};
+module.exports = {Students,findStudents, Campuses};
 

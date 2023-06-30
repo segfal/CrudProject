@@ -29,7 +29,17 @@ const Students = db.define('students', {
     }
 });
 
+console.log(Students); 
+
+const findStudents = async () => {
+    try{
+        const allStudents = await Students.findAll();
+        return allStudents;
+    } catch(error) {
+        next(error);
+    }
+}
 
 
 
-module.exports = Students;
+module.exports = {Students,findStudents};

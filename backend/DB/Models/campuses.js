@@ -26,7 +26,15 @@ const Campuses = db.define('campus', {
     }
 });
 
+const findCampuses = async () => {
+    try{
+        const allCampuses = await Campuses.findAll();
+        return allCampuses;
+    } catch(error) {
+        next(error);
+    }
+}
 
 
 
-module.exports = Campuses;
+module.exports = {Campuses, findCampuses};

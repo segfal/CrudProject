@@ -17,12 +17,20 @@ const syncDB = async () => await db.sync();
 
 // Run server function
 const serverRun = () => {
+
+  //hello world
+  app.get("/", (req, res) => {
+    res.send("Hello World");
+  });
+  
+
+
   app.listen(PORT, () => {
     console.log(`Live on port: ${PORT}`);
   });
 };
 
 syncDB(); //Check if a bug happens with the other db in DB/index.js
-serverRun();
+serverRun(); //Run server
 
-module.exports = app;
+module.exports = app; //Export app for testing

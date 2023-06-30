@@ -1,12 +1,14 @@
 const express = require("express");
 const router = require('express').Router();
-const {Students} = require('../DB/Models/students');
+const {Students, findStudents} = require('../DB/Models/students');
 
 
 
 router.get('/', async (req, res,next) => {
     try{
-        const allStudents = await Students.findAll();
+        //if find all is null, send 404
+        
+        const allStudents = await findStudents();
         
         allStudents ? res.status(200).json(allStudents) : res.status(404).send("No students found");
     } catch(error) {
@@ -14,5 +16,8 @@ router.get('/', async (req, res,next) => {
     }
 
 });
+
+
+ 
 
 module.exports = router;
