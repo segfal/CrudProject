@@ -3,8 +3,6 @@ import { createLogger } from 'redux-logger';
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import studentReducer from './redux/Students.reducer';
-// import { createLogger } from 'redux-logger';
-
 
 const logger = createLogger({ collapsed: true });
 
